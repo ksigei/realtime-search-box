@@ -1,2 +1,6 @@
-<h1>SearchAnalytics#index</h1>
-<p>Find me in app/views/search_analytics/index.html.erb</p>
+<% @search_analytics.each do |search_analytics| %>
+  <p>
+    <%= search_analytics.query %>
+    <%= search_analytics.count %>
+  </p>
+<% end %>
