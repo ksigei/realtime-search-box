@@ -5,4 +5,8 @@ class SearchesController < ApplicationController
     redirect_to search_analytics_path
   end
 
+  private
+    def search_params
+      params.require(:search).permit(:query, :user_id)
+    end
 end
