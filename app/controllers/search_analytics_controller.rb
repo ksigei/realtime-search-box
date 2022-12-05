@@ -8,4 +8,16 @@ class SearchAnalyticsController < ApplicationController
     @search_analytics.count += 1
     @search_analytics.save
   end
+
+  def create
+    @search_analytics = SearchAnalytic.new(search_analytic_params)
+    @search_analytics.save
+    redirect_to search_analytics_path
+  end
+
+  private
+  
+  def search_analytic_params
+    params.require(:search_analytic).permit(:query, :count, :user_id)
+  end
 end

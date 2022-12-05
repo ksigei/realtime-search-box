@@ -8,3 +8,4 @@ class SearchAnalytic < ApplicationRecord
     #     where("query like ?", "%#{query}%")
     # end
 end
+
